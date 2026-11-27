@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Petir Courier — Kurir Kilat Antar Pulau</title>
+<style>
+  html, body { margin: 0; padding: 0; background: #04101f; height: 100%; }
+  body { display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-family: monospace, sans-serif; color: #f2f7ff; }
+  #wrap { position: relative; }
+  canvas { display: block; background: #0b2a5b; border: 2px solid #174a8f; border-radius: 6px;
+    max-width: 96vw; max-height: 86vh; }
+  #touch { display: none; margin-top: 10px; gap: 8px; flex-wrap: wrap; justify-content: center; }
+  #touch button { font-family: monospace; font-size: 15px; font-weight: bold; color: #f2f7ff;
+    background: #174a8f; border: 1px solid #37e0ff; border-radius: 8px; padding: 10px 14px;
+    touch-action: none; user-select: none; }
+  @media (pointer: coarse) { #touch { display: flex; } }
+  #foot { margin-top: 8px; font-size: 12px; color: #9fc6e8; text-align: center; }
+</style>
+</head>
+<body>
+<div id="wrap">
+  <canvas id="game" width="1280" height="720"></canvas>
+</div>
+<div id="touch">
+  <button data-touch="throttle" data-value="1">▲ GAS</button>
+  <button data-touch="throttle" data-value="-1">▼ REM</button>
+  <button data-touch="turn" data-value="-1">◀ BELOK</button>
+  <button data-touch="turn" data-value="1">BELOK ▶</button>
+  <button data-touch="pitch" data-value="1">⬆ NAIK</button>
+  <button data-touch="pitch" data-value="-1">⬇ TURUN</button>
+</div>
+<div id="foot">PETIR COURIER — W/S throttle · A/D belok · I/K naik-turun · V peta taktis · P jeda · M suara</div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
